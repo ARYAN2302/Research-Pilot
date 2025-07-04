@@ -2,10 +2,6 @@ Agentic Research Paper Intelligence Platform
 
 Overview
 
-Build a fullstack GenAI-powered platform that helps users manage, understand, and learn from research papers. The platform should proactively assist users in their research workflow with intelligent, agentic features. The frontend (Next.js, dark chat UI) is already built. This document details the backend, AI, and integration requirements, explaining the working of each feature and how they interact.
-
-
-
 Core Features & Detailed Workflow
 
 1. User Authentication & Profiles
@@ -75,56 +71,7 @@ Tech Stack
  • File Storage: Local ‎`/storage`
 
 
-1. Project Structure
- • ‎`/frontend` — Next.js frontend (already built)
- • ‎`/backend` — FastAPI backend (to be built)
- • ‎`/ai` — AI/ML scripts and utilities (to be built)
- • ‎`/storage` — Uploaded PDFs and assets
 
-2. Backend API
- • Framework: FastAPI (Python)
- • Features:
- ▫ User authentication (JWT-based)
- ▫ File upload (PDFs) with secure local storage
- ▫ Metadata extraction (title, authors, abstract, etc.)
- ▫ Paper management (CRUD)
- ▫ Study planner endpoints (CRUD for goals/sessions)
- ▫ Q&A endpoint (user question, AI answer)
- ▫ Notes, flashcards, mind map endpoints
- ▫ User preferences/settings
- • Persistence: SQLite with SQLAlchemy ORM
-
-3. AI/ML Layer
- • PDF Parsing: ‎`pdfplumber` or ‎`PyMuPDF`
- • Summarization/Notes/Q&A: Groq API (Llama 3/Mistral) via LangChain
- • Vector Embeddings & RAG: sentence-transformers or Groq embeddings; vector store with ChromaDB or Pinecone
- • Agentic Features: LangChain agents to automate study planning, suggest readings, and surface trends/contradictions
-
-4. Integration
- • Document endpoints with OpenAPI
- • All responses as JSON matching frontend expectations
- • Replace frontend mock data with real API calls (JWT auth)
- • File uploads via multipart/form-data
- • Handle loading/error states in frontend
-
-5. Deployment & Local Dev
- • Frontend: Vercel
- • Backend: Render
- • Use environment variables for all secrets
-
-6. Documentation
- • API docs, setup, and usage in ‎`/docs`
- • README in ‎`/backend` and ‎`/ai` with setup instructions
-
-7. Tech Stack
- • Frontend: Next.js (TypeScript, shadcn/ui/Chakra UI, dark chat UI)
- • Backend: FastAPI, SQLite, SQLAlchemy
- • AI/LLM: Groq API, LangChain
- • Vector Store: ChromaDB or Pinecone
-
-  FastAPI backend with all required endpoints and SQLite models
- 2. File upload and parsing
- 3. LLM-powered features (summarization, Q&A, analytics) via Groq + LangChain
  4. Vector search and RAG
  5. Connect frontend to backend, replacing mock data
  6. Polish UI/UX for chat, planner/reports, and insights
